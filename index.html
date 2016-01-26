@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app='MovieApp'>
+<head>
+  <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.0/angular.min.js'></script>
+  <script src='http://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-route.js'></script>
+  <script src='./js/app.js'></script>
+  <script src='./js/routes.js'></script>
+  <script src='./js/filters.js'></script>
+  <script src='./js/controllers.js'></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link href='https://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
+  <link rel='stylesheet' href='./css/styles.css'>
+</head>
+<body>
+  <h1>You Are Beautiful</h1>
+  <div class='container' ng-controller='MovieController as MC'>
+    <!-- <pre>
+      {{MC.infographic | json}}
+    </pre> -->
+
+    <div class='movieWrapper'>
+      <div class='imgWrapper'>
+        <img src='{{MC.infographic.data.Poster}}'>
+      </div>
+      <div class='textWrapper'>
+        <h4>{{MC.infographic.data.Title}} **** Rated {{MC.infographic.data.Rated}}</h4>
+        <h5>{{MC.infographic.data.imdbRating}} out of 10</h5>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

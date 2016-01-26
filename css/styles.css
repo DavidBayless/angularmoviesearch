@@ -1,0 +1,22 @@
+body {
+  font-family: "Poiret One";
+  font-weight: 100;
+  font-size: 20px;
+  text-align: center;
+  font-variant: small-caps;;
+}
+
+.movieWrapper {
+  height: 25rem;
+  width: 15rem;
+}
+
+.imgWrapper {
+  height: 20rem;
+  width: 100%;
+}
+
+.imgWrapper img {
+  height: inherit;
+  width: 100%;
+}
