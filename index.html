@@ -22,22 +22,10 @@
           <option value='-Year'>Year</option>
           <option value='-imdbRating'>Stars</option>
         </select>
-        <button class='col-md-3 col-md-offset-1' ng-click='MC.search(movieSearch)'>Search!</button>
+        <button class='col-md-3 col-md-offset-1' ng-href='#/' ng-click='MC.search(movieSearch)'>Search!</button>
       </div>
     </div>
   </div>
-  <div class='container'>
-    <div class='row'>
-      <div class='movieWrapper' ng-repeat='movie in MC.infographic.data.Search | orderBy: MC.filter'>
-        <div class='imgWrapper'>
-          <img src='{{movie.Poster}}'>
-        </div>
-        <div class='textWrapper'>
-          <h4>{{movie.Title}} **** Rated {{movie.Rated}}</h4>
-          <h5>{{movie.imdbRating}} out of 10</h5>
-        </div>
-      </div>
-    </div>
-  </div>
+  <div ng-view></div>
 </body>
 </html>

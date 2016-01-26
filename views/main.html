@@ -1,0 +1,13 @@
+<div class='container'>
+  <div class='row'>
+    <div class='movieWrapper' ng-repeat='movie in MC.infographic.data.Search | orderBy: MC.filter'>
+      <div class='imgWrapper'>
+        <a ng-href='#/details/{{movie.Title}}/{{movie.Year}}'><img src='{{movie.Poster}}'></a>
+      </div>
+      <div class='textWrapper'>
+        <h4>{{movie.Title}} **** Rated {{movie.Rated}}</h4>
+        <h5>{{movie.imdbRating}} out of 10</h5>
+      </div>
+    </div>
+  </div>
+</div>
