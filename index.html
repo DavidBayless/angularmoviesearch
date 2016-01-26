@@ -12,19 +12,23 @@
   <link href='https://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
   <link rel='stylesheet' href='./css/styles.css'>
 </head>
-<body>
+<body ng-controller='MovieController as MC'>
   <h1>You Are Beautiful</h1>
   <div class='row'>
-    <div class='col-md-4 col-md-offset-4'>
+    <div class='col-md-6 col-md-offset-3'>
       <div class='row'>
-        <input class='col-md-6' type='text' placeholder='Search Movies' ng-model='movieSearch'>
-        <button class='col-md-3 col-md-offset-3'>Search!</button>
+        <input class='col-md-3' type='text' placeholder='Search Movies' ng-model='movieSearch'>
+        <select class='col-md-3 col-md-offset-1' ng-model='MC.filter'>
+          <option value='-Year'>Year</option>
+          <option value='-imdbRating'>Stars</option>
+        </select>
+        <button class='col-md-3 col-md-offset-1' ng-click='MC.search(movieSearch)'>Search!</button>
       </div>
     </div>
   </div>
-  <div class='container' ng-controller='MovieController as MC'>
+  <div class='container'>
     <div class='row'>
-      <div class='movieWrapper' ng-repeat='movie in MC.infographic.data.Search'>
+      <div class='movieWrapper' ng-repeat='movie in MC.infographic.data.Search | orderBy: MC.filter'>
         <div class='imgWrapper'>
           <img src='{{movie.Poster}}'>
         </div>
