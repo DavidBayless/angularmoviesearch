@@ -14,18 +14,24 @@
 </head>
 <body>
   <h1>You Are Beautiful</h1>
-  <div class='container' ng-controller='MovieController as MC'>
-    <!-- <pre>
-      {{MC.infographic | json}}
-    </pre> -->
-
-    <div class='movieWrapper'>
-      <div class='imgWrapper'>
-        <img src='{{MC.infographic.data.Poster}}'>
+  <div class='row'>
+    <div class='col-md-4 col-md-offset-4'>
+      <div class='row'>
+        <input class='col-md-6' type='text' placeholder='Search Movies' ng-model='movieSearch'>
+        <button class='col-md-3 col-md-offset-3'>Search!</button>
       </div>
-      <div class='textWrapper'>
-        <h4>{{MC.infographic.data.Title}} **** Rated {{MC.infographic.data.Rated}}</h4>
-        <h5>{{MC.infographic.data.imdbRating}} out of 10</h5>
+    </div>
+  </div>
+  <div class='container' ng-controller='MovieController as MC'>
+    <div class='row'>
+      <div class='movieWrapper' ng-repeat='movie in MC.infographic.data.Search'>
+        <div class='imgWrapper'>
+          <img src='{{movie.Poster}}'>
+        </div>
+        <div class='textWrapper'>
+          <h4>{{movie.Title}} **** Rated {{movie.Rated}}</h4>
+          <h5>{{movie.imdbRating}} out of 10</h5>
+        </div>
       </div>
     </div>
   </div>
